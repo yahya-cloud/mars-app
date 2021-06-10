@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars app</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+ <img class="background__img" 
+ src="./img/background.jpg"
+  alt="background-img"
+   srcset=""
+   data-background-img>
+
+  <section class="main">
+      <div class="details">
+          <div class="block block__date" data-date-block>
+              <div class="block__box">
+                <h1 class="block__heading block__heading--date"> SOL <span data-current-sol>256</span></h1>
+                <h3 class="block__specs block__specs--date " data-current-date>September 25</h3>
+              </div>
+         
+          </div>
+
+<!-----------------------------BLOCK TWO------------------------------>
+          <div class="block block__temperature" data-temp-block>
+              <div class="block__box">
+                <h1 class="block__heading">temperature</h1>
+                <h3 class="block__specs block__specs--temp" >
+                  High: 
+                  <span data-current-temp-high>55</span>
+                  °<span data-temp-unit>C</span>
+                </h3>
+                <h3 class="block__specs block__specs--temp">
+                     Low:
+                 <span data-current-temp-low>9</span>
+                 °<span data-temp-unit>C</span>
+                  </h3>
+              </div>
+            
+          </div>
+
+          <!-----------------------------BLOCK THREE------------------------------>
+
+          <div class="block block__wind" data-wind-block>
+              <div class="block__box block__box--wind ">
+                <h2 class="block__heading block__heading--wind">Wind</h2>
+                <p class="block__box--wind--reading">
+                  <span data-wind-speed>7</span>
+                  <span data-speed-unit>kph</span>
+                 </p>
+         
+                <div class="block__box--wind--direction">
+                  <p class="sr-only" data-wind-direction-text></p>
+         
+                  <!-- update --direction custom prop
+                       to change arrow direction -->
+                  <div class="block__box--wind--arrow" data-wind-direction-arrow></div>
+                </div>
+              </div>
+
+          
+          </div> 
+
+          <!-----------------------------BLOCK FOUR------------------------------>
+          <div class="block" data-toggle-block>
+              <div class="block__box block__box--toggle">
+                <h2 class="block__heading">Toggle scale</h2>
+
+                <div class="unit">
+                  <label for="cel">°C</label>
+                  <input type="radio" id="cel" name="unit" checked>
+                  <!-- when unit__toggle is clicked
+                       checkbox needs to change -->
+                  <button class="unit__toggle" data-unit-toggle></button>
+                  <label for="fah">°F</label>
+                  <input type="radio" id="fah" name="unit">
+                </div> 
+                
+              </div>
+           
+        </div>
+          </div>
+
+          
+        
+    
+      <div class="mars" data-mars></div>
+  </section>
+
+  <section class="previous-section" data-previous-section>
+
+    <div class="card-box" data-previous-sol-container></div>
+
+  </section>
+
+  <template data-previous-sol-template>
+    <div class="previous-day" data-previous-day>
+      <h3 class="previous-day__sol">
+        Sol
+        <span data-sol></span>
+      </h3>
+      <p class="previous-day__date" data-date></p>
+      <p class="previous-day__temp">
+        High:
+        <span data-temp-high></span>
+        °<span data-temp-unit>C</span>
+      </p>
+      <p class="previous-day__temp">
+        Low:
+        <span data-temp-low></span>
+        °<span data-temp-unit>C</span>
+      </p>
+      <button class="previous-day__more-info" data-select-button>more info</button>
+    </div>
+ </template>
+  
+
+<script src="index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js" 
+integrity="sha512-8Wy4KH0O+AuzjMm1w5QfZ5j5/y8Q/kcUktK9mPUVaUoBvh3QPUZB822W/vy7ULqri3yR8daH3F58+Y8Z08qzeg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"
+integrity="sha512-lJDBw/vKlGO8aIZB8/6CY4lV+EMAL3qzViHid6wXjH/uDrqUl+uvfCROHXAEL0T/bgdAQHSuE68vRlcFHUdrUw==" crossorigin="anonymous"></script>
+<script src="ani.js"></script>
+</body>
+</html>
